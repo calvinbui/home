@@ -1,0 +1,51 @@
+/*transparent navbar*/
+.navbar.transparent.navbar-inverse .navbar-inner {
+  border-width: 0px;
+  -webkit-box-shadow: 0px 0px;
+  box-shadow: 0px 0px;
+  background-color: rgba(0,0,0,0.0);
+  background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+  background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+  background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+  background-color: transparent;
+}
+
+.show-hide {
+  -webkit-transition:all linear 1s;
+  transition:all linear 1s;
+}
+
+.show-hide.ng-hide {
+  opacity:0;
+}
+
+.edit {
+  cursor: pointer;
+  cursor: hand;
+}
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+.row {
+  -moz-column-width: 16em;
+  -webkit-column-width: 16em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em;
+}
+
+.panel-default {
+  display: inline-block;
+  width:  100%;
+}
+
+body {
+  /* Location of the image */
+  background-image: url(../img/square_bg_@2X.png);
+}
+
+.container {
+  padding: 0px 25px 0px 25px;
+}

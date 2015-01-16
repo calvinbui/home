@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <button ng-click="cancel()" type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <h4 class="modal-title">Edit Section</h4>
+</div>
+<form ng-submit="httpMethod('put', '/section/' + section._id, section)">
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" autofocus required maxlength="22" required class="form-control" id="name" placeholder="Name" ng-model="section.name" value="{{section.name}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary pull-left">Save Changes</button>
+        <a confirmation-needed ng-click="httpMethod('delete', '/section/' + section._id)" class="btn btn-danger pull-right">Delete Section</a>
+    </div>
+</form>

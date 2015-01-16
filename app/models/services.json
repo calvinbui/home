@@ -1,0 +1,64 @@
+// just a test when no db is available.
+[{
+    "name": "IBM",
+    "items": [{
+        "name": "W3",
+        "ip": "w3b.ibm.com",
+        "port": "443",
+        "url": "http://w3b.ibm.com/"
+    }, {
+        "name": "Connections Communities",
+        "ip": "w3-connections.ibm.com",
+        "port": "443",
+        "url": "https://w3-connections.ibm.com/communities/service/html/mycommunities"
+    }, {
+        "name": "Team Meeting Sheet",
+        "ip": "w3-connections.ibm.com",
+        "port": "80",
+        "url": "https://w3-connections.ibm.com/activities/service/html/mainpage#activitypage,9f05f555-2c8f-49c5-82e1-d204ac43c878"
+    }, {
+        "name": "Xtreme Leverage",
+        "ip": "w3-103.ibm.com",
+        "port": "80",
+        "url": "http://w3-103.ibm.com/software/xl/download/ticket.do"
+    }]
+}, {
+    "name": "VMWare",
+    "items": [{
+        "name": "vSphere Web Client",
+        "ip": "172.23.0.245",
+        "port": "9443",
+        "url": "https://172.23.0.245:9443/vsphere-client/"
+    }, {
+        "name": "vCenter Operations Manager",
+        "ip": "172.23.0.36",
+        "port": "80",
+        "url": "https://172.23.0.36/vcops-vsphere/loginPage.action"
+    }]
+}, {
+    "name": "Storage",
+    "items": [{
+        "name": "Storwize V7000",
+        "ip": "172.23.0.65",
+        "port": "443",
+        "url": "https://172.23.0.65/"
+    }, {
+        "name": "Storwize i7000",
+        "ip": "172.23.0.36",
+        "port": "443",
+        "url": "https://172.23.0.75/"
+    }]
+}, {
+    "name": "Networking",
+    "items": [{
+        "name": "Network Document",
+        "ip": "w3-connections.ibm.com",
+        "port": "443",
+        "url": "https://w3-connections.ibm.com/activities/service/html/mainpage#activitypage,9c7dc5e2-ce11-4eb9-8e32-c14e81494bbc"
+    }, {
+        "name": "vCenter Operations Manager",
+        "ip": "172.23.0.36",
+        "port": "80",
+        "url": "https://172.23.0.36/vcops-vsphere/loginPage.action"
+    }]
+}]

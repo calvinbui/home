@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <!--Other-->
+    <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <script src="/bower_components/skycons/skycons.js"></script>
+    <link href="/bower_components/normalize.css/normalize.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!--Bootstrap-->
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!--Angular-->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/app/controllers/main.js"></script>
+    <script src="/bower_components/angular-skycons/angular-skycons.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+    <!--Custom-->
+    <link type="text/css" href="/public/stylesheets/style.css" rel="stylesheet">
+    <script type="text/javascript" src="/public/js/script.js"></script>
+    <!--Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="/public/img/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/public/img/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/public/img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/public/img/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/public/img/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/public/img/favicon/apple-touch-icon-76x76.png">
+    <link rel="icon" type="image/png" href="/public/img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/public/img/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/public/img/favicon/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#2b5797">
+</head>
+<body ng-app="myApp">
+<div class="container">
+    <!--Navbar/Header-->
+    <div class="navbar transparent" ng-controller="WeatherCtrl">
+        <!--Logo/Icon-->
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                <img alt="HOME" class="img-responsive" height="50" width="50" src="/public/img/home-icon.png"/>
+            </a>
+        </div>
+        <!--Weather-->
+        <div class="navbar-collapse navbar-inner collapse navbar-responsive-collapse">
+            <ul style="cursor: pointer;  cursor: hand;" ng-click="openWeather()" class="weather nav navbar-nav navbar-right">
+                <li class="navbar-brand"><skycon icon="currentweather.forecast.icon" size="currentweather.forecast.iconSize"></skycon></li>
+                <li style="padding-top: 17px"><a>{{weather.currentTemp}}° - {{weather.currentSummary}} <i class="fa fa-info-circle"></i> </a> </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Body-->
+    <div class="servicectrl" ng-controller="ServiceCtrl">
+        <!--Edit Button-->
+        <div class="pull-right">
+            <button type="button" ng-if="editing" ng-click="addSection()" id="addSectionBtn" class="btn btn-sm btn-success">
+                <span class="fa fa-plus"></span> New Section
+            </button>
+            <button id="editbtn" ng-click="editing = !editing" class="btn btn-sm btn-link"><span class="fa fa-wrench fa-lg"></span></button>
+        </div>
+
+        <br/>
+        <br/>
+
+        <!--Section and Items-->
+        <div class="row">
+            <div ng-repeat='section in sections'>
+                <div class="panel panel-default">
+                    <!-- Title/Heading -->
+                    <div class="panel-heading text-center">
+                        <i ng-if="editing" ng-click="editSection(section)" class="edit fa fa-pencil text-primary"></i>
+                        {{section.name}}
+                        <i ng-if="editing" ng-click="addItem(section)" class="edit fa fa-plus text-primary"></i>
+                    </div>
+                    <div class="list-group">
+                        <!-- Editing Mode -->
+                        <a ng-repeat="item in section.items" ng-if="editing" class="list-group-item">
+                            <i ng-click="editItem(item)" class="edit fa fa-pencil text-primary"></i>
+                            {{item.name}}
+                            <span class="badge">
+                                <i class="fa {{item.status == 'open' ? 'fa-check' : 'fa-times'}}"></i>
+                            </span>
+                        </a>
+                        <!-- Normal Mode -->
+                        <a ng-repeat="item in section.items" ng-if="!editing" ng-href="{{item.url}}" class="list-group-item">
+                            {{item.name}}
+                            <span class="badge {{item.status == 'open' ? 'alert-success' : 'alert-danger'}}""">
+                                <i class="fa {{item.status == 'open' ? 'fa-check' : 'fa-times'}}"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

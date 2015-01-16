@@ -1,0 +1,7 @@
+{
+  "forecast_api"   : "",
+  "weather_lat"   : "",
+  "weather_long"  : "",
+  "weather_units" : "si",
+  "database_path" :  "mongodb://localhost/test"
+}
