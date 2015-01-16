@@ -5,8 +5,8 @@
 // REST for items :)
 var express = require('express');
 router = express.Router(),
-    Item = require('../models/Item'),
-    Section = require('../models/Section'),
+    Item = require('../models/item'),
+    Section = require('../models/section'),
     url = require('url'),
     winston = require('winston');
 

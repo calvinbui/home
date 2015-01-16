@@ -3,8 +3,8 @@
  */
 var express     = require('express');
     router      = express.Router(),
-    Section     = require('../models/Section'),
-    Item        = require('../models/Item'),
+    Section     = require('../models/section'),
+    Item        = require('../models/item'),
     async       = require('async'),
     portscanner = require('portscanner'),
     winston     = require('winston');
